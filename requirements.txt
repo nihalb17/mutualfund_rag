@@ -3,6 +3,8 @@ langchain
 langchain-groq
 langchain-huggingface
 langchain-community
+langchain-chroma
 chromadb
 sentence-transformers
 python-dotenv
+pysqlite3-binary

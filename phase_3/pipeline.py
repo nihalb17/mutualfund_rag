@@ -1,5 +1,14 @@
 import os
-from langchain_community.vectorstores import Chroma
+
+# Streamlit/Linux ChromaDB SQLite fix
+try:
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except ImportError:
+    pass
+
+from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
